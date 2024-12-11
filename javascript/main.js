@@ -27,20 +27,23 @@ todoButton.addEventListener("click", function(e){
     }
 
     const newlistContainer = document.createElement("div");
-    newlistContainer.classList.add("list-container");
-    const newListItem = document.createElement("li");
-    newListItem.classList.add("list-item");
-    const newDeleteButton = document.createElement("button");
-    newDeleteButton.classList.add("delete-button");
-    newDeleteButton.textContent = "Delete";
+    newlistContainer.classList.add("list-item");
+
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.classList.add("checkbox");
 
-    newlistContainer.appendChild(checkbox);
-    newlistContainer.appendChild(newDeleteButton);
-    newlistContainer.appendChild(newListItem);
+    const newListItem = document.createElement("span");
     newListItem.textContent = todoInput.value;
+
+    const newDeleteButton = document.createElement("button");
+    newDeleteButton.classList.add("delete-button");
+    newDeleteButton.textContent = "Delete";
+
+    newlistContainer.appendChild(checkbox);
+    newlistContainer.appendChild(newListItem);
+    newlistContainer.appendChild(newDeleteButton);
+
     todoInput.value = "";
 
     //eventListeners to the newly added elements
